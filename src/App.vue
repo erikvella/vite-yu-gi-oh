@@ -1,16 +1,24 @@
 <script>
+import { store } from './data/store';
 export default {
-name : 'App'
+name : 'App',
+data(){
+  return{
+    store
+  }
+}
 }
 </script>
 
 
 <template>
-  <h1>ciao yu gi oh</h1>
+  <h1>{{ store.titleApp }}</h1>
 </template>
 
 
 
-<style>
+<style lang="scss">
+
+@use './scss/main.scss';
 
 </style>
