@@ -5,11 +5,17 @@ name: 'Header'
 </script>
 
 <template>
-  <h1>questo è l'header</h1>
+  <header>
+    <h1>YU-GI-OH</h1>
+  </header>
+  
 </template>
 
 
 
-<style>
+<style lang="scss" scoped>
 
+header{
+  background-color: rgb(236, 236, 236);
+}
 </style>
