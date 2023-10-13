@@ -4,7 +4,7 @@ name: 'Card',
 props:{
   name: String,
   archetype: String,
-  image_url: String,
+  image: String,
 }
 }
 </script>
@@ -12,7 +12,7 @@ props:{
 <template>
   <div class="col-2 mx-3 mb-3  debug">
 
-      <img src="https://images.ygoprodeck.com/images/cards/34541863.jpg" alt="">
+      <img src="card.card_images[0].image_url" alt="image">
     
     <h5 class="text-center my-3 white-text">{{ name }}</h5>
     <h5 class="text-center my-3 ">{{ archetype }}</h5>

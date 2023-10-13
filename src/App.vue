@@ -3,10 +3,12 @@ import { store } from './data/store';
 import Header from './components/Header.vue';
 import Main from './components/Main.vue';
 import axios from 'axios';
+import SearchBar from './components/partials/SearchBar.vue';
 
 export default {
   components:{
    Header,
+   SearchBar,
    Main
   },
 name : 'App',
@@ -21,8 +23,7 @@ methods:{
    .then(res =>{
     store.cardsList = res.data.data;
     console.log(store.cardsList); 
-    store.imageList = res.data.data.card_images;
-    console.log(store.imageList);
+
    })
    .catch(err =>{
     console.log(err);
@@ -40,7 +41,7 @@ mounted(){
   <body>
     
     <Header class="text-center p-3" />
-  
+    <SearchBar />
     <Main />
 
   </body>
