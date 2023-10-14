@@ -1,13 +1,13 @@
 <script>
 import { store } from '../data/store';
 import Card from './partials/Card.vue';
-import SearchBar from './partials/SearchBar.vue';
+
 export default {
 name:'Main',
 
 components:{
  Card,
- SearchBar
+
 },
 
 data(){
@@ -23,9 +23,7 @@ mounted(){
 </script>
 
 <template>
-  <div>
-    <SearchBar />
-  </div>
+  
   
  <div class="container my-5 ">
   

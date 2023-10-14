@@ -3,11 +3,13 @@ import { store } from './data/store';
 import Header from './components/Header.vue';
 import Main from './components/Main.vue';
 import axios from 'axios';
+import SearchBar from './components/partials/SearchBar.vue';
 
 
 export default {
   components:{
    Header,
+   SearchBar,
    Main
   },
 name : 'App',
@@ -18,7 +20,14 @@ data(){
 },
 methods:{
   getApi(){
-   axios.get(store.apiUrl)
+   axios.get(store.apiUrl ,
+    {
+    params:{
+      archetype:store.archetypeToSearch
+    }
+   }
+   )
+  
    .then(res =>{
     store.cardsList = res.data.data;
     console.log(store.cardsList); 
@@ -28,6 +37,8 @@ methods:{
     console.log(err);
    })
   },
+
+  
 },
 mounted(){
   this.getApi();
@@ -40,6 +51,8 @@ mounted(){
   <body>
     
     <Header class="text-center p-3" />
+
+   <SearchBar @startSearch="getApi" />
   
     <Main />
 
