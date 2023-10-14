@@ -12,7 +12,7 @@ props:{
 <template>
   <div class="col-2 mx-3 mb-3  debug">
 
-      <img src="card.card_images[0].image_url" alt="image">
+      <img :src="image" alt="image">
     
     <h5 class="text-center my-3 white-text">{{ name }}</h5>
     <h5 class="text-center my-3 ">{{ archetype }}</h5>

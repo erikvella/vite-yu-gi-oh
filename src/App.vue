@@ -3,12 +3,11 @@ import { store } from './data/store';
 import Header from './components/Header.vue';
 import Main from './components/Main.vue';
 import axios from 'axios';
-import SearchBar from './components/partials/SearchBar.vue';
+
 
 export default {
   components:{
    Header,
-   SearchBar,
    Main
   },
 name : 'App',
@@ -41,7 +40,7 @@ mounted(){
   <body>
     
     <Header class="text-center p-3" />
-    <SearchBar />
+  
     <Main />
 
   </body>
