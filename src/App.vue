@@ -4,12 +4,14 @@ import Header from './components/Header.vue';
 import Main from './components/Main.vue';
 import axios from 'axios';
 import SearchBar from './components/partials/SearchBar.vue';
+import Loader from './components/partials/Loader.vue';
 
 
 export default {
   components:{
    Header,
    SearchBar,
+   Loader,
    Main
   },
 name : 'App',
@@ -20,6 +22,7 @@ data(){
 },
 methods:{
   getApi(){
+    store.isLoading = true,
    axios.get(store.apiUrl ,
     {
     params:{
@@ -31,10 +34,12 @@ methods:{
    .then(res =>{
     store.cardsList = res.data.data;
     console.log(store.cardsList); 
-
+    store.isLoading = false;
+    
    })
    .catch(err =>{
     console.log(err);
+    store.isLoading = false;
    })
   },
 
@@ -53,8 +58,8 @@ mounted(){
     <Header class="text-center p-3" />
 
    <SearchBar @startSearch="getApi" />
-  
-    <Main />
+    <Loader v-if="store.isLoading" />
+    <Main v-else />
 
   </body>
 </template>

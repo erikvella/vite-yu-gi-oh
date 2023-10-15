@@ -18,9 +18,11 @@ data(){
   
     class="form-select" aria-label="Default select example">
   <option selected value="">Seleziona l'archetipo</option>
-  <option value="Alien">Alien</option>
-  <option value="Insect">Insect</option>
-  <option value="Beast">Beast</option>
+  <option 
+  v-for="(archetype , index) in store.archetypeList"
+  :key="index"
+  :value="archetype">{{ archetype }}</option>
+  
 </select>
 
 <button @click="$emit('startSearch')"
