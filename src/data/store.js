@@ -5,5 +5,5 @@ export const store = reactive({
   cardsList: [],
   archetypeToSearch:null,
   isLoading : true,
-  archetypeList : ['Alien' , 'Noble Knight' , 'Melodious']
+  archetypeList : []
 })

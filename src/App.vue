@@ -40,6 +40,12 @@ methods:{
    .catch(err =>{
     console.log(err);
     store.isLoading = false;
+    // ciclo di tutti gli archetipi
+    store.cardsList.forEach(type => {
+      if(!store.archetypeList.includes(type.archetype)){
+        store.archetypeList.push(type.archetype)
+      }
+    })
    })
   },
 
